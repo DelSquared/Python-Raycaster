@@ -34,7 +34,7 @@ angle = 0
 
 l = np.array([[0.0,1.0],[1.0,0.0]]) #line segment
 
-os.system('clear')
+os.system('cls')
 
 while True: #let ray rotate emitted from the origin
   r = Ray(np.array([0.0,0.0]),np.array([np.cos(angle),np.sin(angle)]))
@@ -46,5 +46,5 @@ while True: #let ray rotate emitted from the origin
     print("At angle {:.4f}Pi, ray does not intersect".format(angle/np.pi))
     
   time.sleep(0.1)
-  os.system('clear')
+  os.system('cls')
   angle +=0.01 #increment angle
