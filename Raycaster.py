@@ -1,7 +1,7 @@
 import numpy as np 
 import os,time
 
-class Ray:
+class Ray: #ray class
   def __init__(self, source, direction):
     self.source = source
     self.direction = direction
@@ -31,15 +31,20 @@ class Ray:
 
 
 angle = 0
-l = np.array([[0.0,1.0],[1.0,0.0]])
+
+l = np.array([[0.0,1.0],[1.0,0.0]]) #line segment
+
 os.system('clear')
-while True:
+
+while True: #let ray rotate emitted from the origin
   r = Ray(np.array([0.0,0.0]),np.array([np.cos(angle),np.sin(angle)]))
   inters = r.checkIntersection(l)
-  if inters!=False:
+  
+  if inters!=False: #output
     print("At angle {:.4f}Pi, ray makes an angle of {:.4f}rad at a distance of {:.4f} from source".format(angle/np.pi, inters[2], inters[1]))
   else:
     print("At angle {:.4f}Pi, ray does not intersect".format(angle/np.pi))
+    
   time.sleep(0.1)
   os.system('clear')
-  angle +=0.01
+  angle +=0.01 #increment angle
